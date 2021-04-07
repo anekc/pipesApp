@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { PrimeNgModule } from './prime-ng/prime-ng.module';
+import { SharedModule } from './shared/shared.module';
+import { VentasModule } from './ventas/ventas.module';
 
 
 @NgModule({
@@ -11,7 +13,9 @@ import { PrimeNgModule } from './prime-ng/prime-ng.module';
   ],
   imports: [
     BrowserModule,
-    PrimeNgModule
+    PrimeNgModule,
+    SharedModule,
+    VentasModule
     
   ],
   providers: [],
