@@ -1,1 +1,86 @@
-<p>numeros works!</p>
+<div class="text-layout">
+    <h1>Decimal Pipe y Porcentaje</h1>
+    <p>Pipes incluidos en Angular</p>
+</div>
+
+<div class="p-grid">
+    <div class="p-col-6">
+        <p-card header="Ventas netas" subheader="del año">
+
+            <ul>
+                <li>
+
+                    {{ventasNetas}} | number
+
+                </li>
+
+                <li>
+
+                    {{ventasNetas}} | number: '1.2-2'
+
+                </li>
+                <hr> Currency Pipe
+
+                <li>{{ventasNetas}} | currency</li>
+                <li> currency: 'EUR': 'symbol-narrow' </li>
+            </ul>
+
+        </p-card>
+
+
+    </div>
+
+    <div class="p-col-6">
+        <p-card header="Ventas netas" subheader="del año">
+
+            <ul>
+                <li>
+
+                    <i class="pi pi-dollar"></i> {{ventasNetas | number}}
+
+                </li>
+
+                <li>
+
+                    <i class="pi pi-dollar"></i> {{ventasNetas | number: '1.2-2'}}
+
+                </li>
+                <hr> Currency Pipe
+
+                <li>{{ventasNetas | currency}}</li>
+
+                <li>{{ventasNetas | currency: 'EUR': 'symbol-narrow'}}</li>
+            </ul>
+
+
+        </p-card>
+
+
+    </div>
+</div>
+
+<div class="p-grid">
+    <div class="p-col-6">
+        <p-card header="Porcentajes">
+            <ul>
+                <li>
+                    {{porcentaje}} | percent: '2.2-2'
+
+                </li>
+            </ul>
+        </p-card>
+    </div>
+
+    <div class="p-col-6">
+        <p-card header="Porcentajes con Pipes">
+
+            <ul>
+                <li>
+                    {{porcentaje | percent: '2.2-2'}}
+
+                </li>
+            </ul>
+        </p-card>
+    </div>
+
+</div>
