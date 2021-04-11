@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-no-comunes',
@@ -25,12 +26,52 @@ clientesMap = {
   }
 
   quitarInvitados(){
-    return this.clientes.shift();
+     this.clientes.shift();
   }
 
   cambiarNombre(){
     this.nombre= 'María'
     this.genero ='femenino'
   }
+
+  //KeyValuePipe
+
+  persona = {
+    nombre: 'Alejandro',
+    edad: 26,
+    direccion: 'Vancouver, Canada'
+  }
+
+  //json pipe
+
+  heroes = [
+    {
+      nombre: 'Supermam',
+      vuela: false
+    },
+
+    {
+      nombre: 'Spiderman',
+      vuela: false
+    },
+
+    {
+      nombre: 'Aquaman',
+      vuela: false
+    }
+
+  ];
+
+  // async pipe
+
+  mibservable = interval(1000);
+
+  valorPromesa = new Promise ((resolve, reject) => {
+    setTimeout(() => {
+      resolve ('Tenemos data en la promesa');
+  }, 3500);
+
+
+});
 
 }

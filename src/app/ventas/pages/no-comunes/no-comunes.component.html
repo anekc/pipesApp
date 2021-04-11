@@ -12,7 +12,7 @@
 
             </p>
 
-            <p-button (click)="cambiarNombre()"> Cambiar Nombre</p-button>
+            <p-button label="Cambiar Nombre" (click)="cambiarNombre()"> </p-button>
         </p-fieldset>
     </div>
 
@@ -26,6 +26,53 @@
             <p-button (click)="quitarInvitados()">
                 Quitar invitados
             </p-button>
+        </p-fieldset>
+    </div>
+
+    <div class="p-col p-md-6 ">
+        <p-fieldset legend="Slice Pipe" [toggleable]="true">
+
+            <b>Original</b>
+            <pre>{{clientes}}</pre>
+
+            <b>slice:0:2</b>
+            <pre>{{clientes | slice:0:2}}</pre>
+
+        </p-fieldset>
+    </div>
+
+    <div class="p-col p-md-6 ">
+        <p-fieldset legend="KeyValue Pipe" [toggleable]="true">
+
+            <ul>
+                <li *ngFor="let item of persona | keyvalue">
+                    {{item.key | titlecase}}: {{item.value}}
+                </li>
+
+            </ul>
+
+        </p-fieldset>
+    </div>
+
+
+
+    <div class="p-col">
+        <p-fieldset legend="Json Pipe" [toggleable]="true">
+
+            <pre>{{heroes | json}}</pre>
+
+        </p-fieldset>
+    </div>
+
+
+    <div class="p-col">
+        <p-fieldset legend="Async Pipe" [toggleable]="true">
+            <pre *ngIf="!(mibservable | async)">Resolviendo Observable</pre>
+            <pre>{{mibservable | async}}</pre>
+
+            <pre *ngIf="!(valorPromesa | async)">Resolviendo Promesa</pre>
+            <pre>{{valorPromesa | async}}</pre>
+
         </p-fieldset>
     </div>
 </div>
